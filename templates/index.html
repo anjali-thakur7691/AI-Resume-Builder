@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Builder</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">AI Resume Builder</div>
+
+    <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Templates</a></li>
+        <li><a href="#">AI Tools</a></li>
+        <li><a href="#">Examples</a></li>
+        <li><a href="#">Tips</a></li>
+    </ul>
+
+    <button class="login-btn">Login</button>
+</nav>
+
+<section class="hero">
+    <div class="left">
+        <h1>Create Professional<br>Resumes in Minutes</h1>
+
+        <p>Use AI to create a beautiful resume.</p>
+
+       <div class="buttons">
+    <button class="create-btn">Create Resume</button>
+    <button class="demo-btn">View Templates</button>
+</div>
+    </div>
+
+    <div class="right">
+        <img src="{{ url_for('static', filename='images/resume.png') }}" alt="Resume">
+    </div>
+</section>
+
+<section class="features">
+
+    <h2>Why Choose Our AI Resume Builder?</h2>
+
+    <div class="feature-box">
+
+        <div class="card">
+            <h3>🤖 AI Suggestions</h3>
+            <p>Get smart resume suggestions using AI.</p>
+        </div>
+
+        <div class="card">
+            <h3>📄 Professional Templates</h3>
+            <p>Choose from modern resume templates.</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Fast Resume</h3>
+            <p>Create your resume in just a few minutes.</p>
+        </div>
+
+        <div class="card">
+            <h3>📥 PDF Download</h3>
+            <p>Download your resume as a PDF instantly.</p>
+        </div>
+
+    </div>
+
+</section>
+<section class="resume-form">
+
+    <h2>Create Your Resume</h2>
+
+    <form action="/generate" method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="photo" accept="image/*">
+
+        <input type="text" name="name" placeholder="Full Name">
+
+        <input type="email" name="email" placeholder="Email">
+
+        <input type="text" name="phone" placeholder="Phone Number">
+
+        <textarea name="skills" placeholder="Skills"></textarea>
+
+        <textarea name="education" placeholder="Education"></textarea>
+
+        <textarea name="experience" placeholder="Experience"></textarea>
+        <label>Select Resume Template</label>
+
+<select name="template">
+    <option value="blue">Blue Professional</option>
+    <option value="green">Green Modern</option>
+    <option value="dark">Dark Theme</option>
+    <option value="minimal">Minimal</option>
+</select>
+
+    <div class="action-buttons">
+
+    <button type="submit" class="generate-btn">
+        Generate Resume
+    </button>
+
+    <a href="/download">
+        <button type="button" class="download-btn">
+            Download PDF
+        </button>
+    </a>
+
+</div>
+    </form>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+            <h2>AI Resume Builder</h2>
+            <p>Create professional resumes with AI.</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#">Home</a><br>
+            <a href="#">Templates</a><br>
+            <a href="#">About</a><br>
+            <a href="#">Contact</a>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <p>Email: support@airesume.com</p>
+            <p>Phone: +91 9876543210</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 AI Resume Builder. All Rights Reserved.
+    </p>
+
+</footer>
+<footer class="footer">
+    <h3>AI Resume Builder</h3>
+    <p>Create professional resumes using Python & Flask.</p>
+    <p>© 2026 All Rights Reserved.</p>
+</footer>
+</body>
+</html>
+<section class="stats">
+
+    <div class="stat-card">
+        <h2>50K+</h2>
+        <p>Resumes Created</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>25K+</h2>
+        <p>Happy Users</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>4.9★</h2>
+        <p>User Rating</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>100%</h2>
+        <p>ATS Friendly</p>
+    </div>
+
+</section>
+
+<section class="testimonials">
+
+    <h2>What Our Users Say</h2>
+
+    <div class="testimonial-box">
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>"Amazing AI Resume Builder! I got my first interview in just one week."</p>
+            <h4>- Rahul Sharma</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>"The templates are modern and ATS-friendly. Highly recommended."</p>
+            <h4>- Priya Verma</h4>
+        </div>
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>"Easy to use and the PDF download feature is excellent."</p>
+            <h4>- Aman Singh</h4>
+        </div>
+
+    </div>
+
+</section>
