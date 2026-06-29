@@ -2,3 +2,4 @@ Flask
 Werkzeug
 xhtml2pdf
 reportlab
+gunicorn

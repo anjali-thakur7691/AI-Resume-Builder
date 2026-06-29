@@ -1,147 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>Professional Resume</title>
 
-        body{
-            margin:0;
-            padding:30px;
-            background:#f4f4f4;
-            font-family:Arial,sans-serif;
-        }
-
-        .resume{
-            width:900px;
-            margin:auto;
-            display:flex;
-            background:white;
-            box-shadow:0 0 15px rgba(0,0,0,.2);
-        }
-
-        .left{
-            width:35%;
-            background:#3f51b5;
-            color:white;
-            padding:30px;
-        }
-
-        .right{
-            width:65%;
-            padding:30px;
-        }
-
-        h1{
-            margin-top:10px;
-        }
-
-        h2{
-            color:#3f51b5;
-            border-bottom:2px solid #3f51b5;
-            padding-bottom:5px;
-        }
-
-        p{
-            line-height:1.7;
-        }
-        .resume{
-    width:900px;
-    margin:40px auto;
-    display:flex;
-    background:white;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-    border-radius:15px;
-    overflow:hidden;
-}
-
-.left{
-    width:35%;
-    background:#5b4bff;
-    color:white;
-    padding:30px;
-    text-align:center;
-}
-
-.left img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid white;
-    margin-bottom:20px;
-}
-
-.right{
-    width:65%;
-    padding:40px;
-}
-
-.right h2{
-    color:#5b4bff;
-    margin-top:20px;
-    border-bottom:2px solid #ddd;
-    padding-bottom:8px;
-}
-
-.right p{
-    line-height:28px;
-}
-
-    </style>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
 
 </head>
 
-<body class="{{ template }}">
-
+<body>
 
 <div class="resume">
 
 <div class="left">
+
 {% if filename %}
-<img src="{{ url_for('static', filename='images/' + filename) }}"
-     width="150"
-     height="150"
-     style="border-radius:50%; object-fit:cover;">
+<img src="{{ url_for('static', filename='images/' + filename) }}">
+{% else %}
+<img src="{{ url_for('static', filename='images/profile.png') }}">
 {% endif %}
 
-<h1>{{ name }}</h1>
+<h1>{{name}}</h1>
 
-<p><b>Email</b><br>{{ email }}</p>
+<h3>CONTACT</h3>
 
-<p><b>Phone</b><br>{{ phone }}</p>
+<p>{{email}}</p>
+
+<p>{{phone}}</p>
+
+<h3>SKILLS</h3>
+
+<ul>
+
+{% for skill in skills_list %}
+
+<li>{{skill}}</li>
+
+{% endfor %}
+
+</ul>
 
 </div>
 
 <div class="right">
 
-<h2>Skills</h2>
+<h2>Professional Summary</h2>
 
-<ul>
-    {% for skill in skills_list %}
-        <li>{{ skill }}</li>
-    {% endfor %}
-</ul>
-
-<h2>Education</h2>
-
-<p>{{ education }}</p>
+<p>
+{{summary if summary else "Motivated and detail-oriented candidate with strong technical knowledge, problem-solving skills, and excellent communication abilities. Passionate about building modern applications and continuously learning new technologies."}}
+</p>
 
 <h2>Experience</h2>
 
-<p>{{ experience }}</p>
+<p>{{experience}}</p>
+
+<h2>Education</h2>
+
+<p>{{education}}</p>
+
+<h2>Technical Skills</h2>
+
+<ul>
+
+{% for skill in skills_list %}
+
+<li>{{skill}}</li>
+
+{% endfor %}
+
+</ul>
+<div class="analysis-card">
+
+    <h2>🤖 AI Resume Analysis</h2>
+
+    <div class="analysis-item">
+        <span>ATS Compatibility</span>
+        <div class="progress">
+            <div class="progress-fill" style="width:92%"></div>
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <span>Skills Match</span>
+        <div class="progress">
+            <div class="progress-fill" style="width:88%"></div>
+        </div>
+    </div>
+
+    <div class="analysis-item">
+        <span>Resume Quality</span>
+        <div class="progress">
+            <div class="progress-fill" style="width:95%"></div>
+        </div>
+    </div>
+
+</div>
+<div class="tips">
+
+<h2>AI Suggestions</h2>
+
+<ul>
+
+<li>✔ Add more technical skills.</li>
+
+<li>✔ Keep your resume to one page.</li>
+
+<li>✔ Use action words like Developed, Created, Managed.</li>
+
+<li>✔ Add measurable achievements.</li>
+
+</ul>
+
+</div>
+
+<div class="btns">
+
+<button onclick="window.print()">
+Download Resume
+</button>
+
+<a href="/download">
+
+<button>
+Download PDF
+</button>
+
+</a>
 
 </div>
 
 </div>
-<div style="text-align:center; margin:30px;">
-    <button onclick="window.print()">📄 Download / Print Resume</button>
+
 </div>
 
 </body>
 </html>
-<a href="/download">
-    <button>Download PDF</button>
-</a>

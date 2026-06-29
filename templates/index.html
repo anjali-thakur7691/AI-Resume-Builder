@@ -18,6 +18,8 @@
         <li><a href="#">AI Tools</a></li>
         <li><a href="#">Examples</a></li>
         <li><a href="#">Tips</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Signup</a></li>
     </ul>
 
     <button class="login-btn">Login</button>
@@ -34,10 +36,44 @@
     <button class="demo-btn">View Templates</button>
 </div>
     </div>
+    <div class="score-card">
+
+<h3>AI Resume Score</h3>
+
+<div class="circle">
+92%
+</div>
+
+<p>Excellent Resume</p>
+
+</div>
 
     <div class="right">
         <img src="{{ url_for('static', filename='images/resume.png') }}" alt="Resume">
     </div>
+</section>
+<section class="stats">
+
+<div>
+<h2>50K+</h2>
+<p>Resumes Created</p>
+</div>
+
+<div>
+<h2>95%</h2>
+<p>ATS Success</p>
+</div>
+
+<div>
+<h2>4.9★</h2>
+<p>User Rating</p>
+</div>
+
+<div>
+<h2>24/7</h2>
+<p>AI Support</p>
+</div>
+
 </section>
 
 <section class="features">
@@ -69,6 +105,35 @@
     </div>
 
 </section>
+<section class="templates">
+
+<h2>Choose Your Resume Template</h2>
+
+<div class="template-box">
+
+<div class="template-card">
+<h3>Professional</h3>
+<p>Best for Software Jobs</p>
+</div>
+
+<div class="template-card">
+<h3>Modern</h3>
+<p>Clean & Elegant Design</p>
+</div>
+
+<div class="template-card">
+<h3>Creative</h3>
+<p>Perfect for Designers</p>
+</div>
+
+<div class="template-card">
+<h3>Minimal</h3>
+<p>Simple ATS Friendly</p>
+</div>
+
+</div>
+
+</section>
 <section class="resume-form">
 
     <h2>Create Your Resume</h2>
@@ -87,6 +152,13 @@
 
         <textarea name="education" placeholder="Education"></textarea>
 
+        <label>Professional Summary</label>
+
+<textarea
+name="summary"
+placeholder="Write a short professional summary">
+</textarea>
+
         <textarea name="experience" placeholder="Experience"></textarea>
         <label>Select Resume Template</label>
 
@@ -98,6 +170,9 @@
 </select>
 
     <div class="action-buttons">
+<hr>
+
+<h3>Resume Settings</h3>
 
     <button type="submit" class="generate-btn">
         Generate Resume
@@ -129,6 +204,8 @@
             <a href="#">Templates</a><br>
             <a href="#">About</a><br>
             <a href="#">Contact</a>
+            <a href="/login"><button class="login-btn">Login</button></a>
+            <a href="/signup"><button class="login-btn">Signup</button></a>
         </div>
 
         <div>

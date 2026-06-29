@@ -371,3 +371,52 @@ button:hover{
     flex-direction:column;
 }
 }
+
+.templates{
+    padding:80px;
+    text-align:center;
+    background:white;
+}
+
+.templates h2{
+    font-size:40px;
+    margin-bottom:40px;
+}
+
+.template-box{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.template-card{
+    width:250px;
+    background:#ffffff;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.template-card:hover{
+    transform:translateY(-10px);
+    border:2px solid #5b4bff;
+}
+
+.template-card h3{
+    color:#5b4bff;
+    margin-bottom:15px;
+}
+
+.tips{
+    margin-top:30px;
+    background:#eef2ff;
+    padding:25px;
+    border-radius:15px;
+}
+
+.tips li{
+    margin:10px 0;
+}
